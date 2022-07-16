@@ -106,8 +106,8 @@ class Age {
         }`
         alertFuture.classList.add('alert__error__hide')
         futurePassed.textContent = this._daysBetweenDate(
-          this.#birthDay,
-          futurDate
+          futurDate,
+          this.#birthDay
         )
       } else {
         alertFuture.classList.remove('alert__error__hide')
@@ -117,15 +117,19 @@ class Age {
   }
   _daysBetweenDate(date1, date2) {
     const month = Math.trunc(
-      Math.abs((date1 - date2) / (1000 * 60 * 60 * 24 * 12))
+      Math.abs(
+        date2.getMonth() -
+          date1.getMonth() +
+          12 * (date2.getFullYear() - date1.getFullYear())
+      )
     )
     const days = Math.trunc(Math.abs((date1 - date2) / (1000 * 60 * 60 * 24)))
-    const mins = Math.trunc(Math.abs((date1 - date2) / (1000 * 60 * 60)))
+    const hours = Math.trunc(Math.abs((date1 - date2) / (1000 * 60 * 60)))
     // const secs = Math.trunc(Math.abs((date1 - date2) / (1000 * 60)))
 
-    return `${month} ${month > 1 ? 'Months' : 'Month'} -${days} ${
-      days < 1 ? 'Days' : 'Day'
-    } - ${mins} MIN      |AGO`
+    return `${month} ${month > 1 ? 'Months' : 'Month'} - ${days} ${
+      days > 1 ? 'Days' : 'Day'
+    } - ${hours} HOURS      ⚡LIVED`
   }
 
   _checkResults(e) {
