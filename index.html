@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Age Calculator</title>
+    <script defer src="/script.js"></script>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <img src="/logo.png" alt="logo" class="logo" />
+
+      <form id="form" action="">
+        <div class="user__infos">
+          <div class="both your__date">
+            <p class="date__para">Enter Date of Birth</p>
+
+            <input
+              type="date"
+              name="date"
+              id="date"
+              class="input__birth__date"
+            />
+            <p class="alert__error alert__birth__date alert__error__hide">
+              <i>Lorem i consectetur adipisicing elit.</i>
+            </p>
+            <div class="check__valid cbirth check__valid__false"></div>
+          </div>
+          <div class="both your__date__res">
+            <p class="date__para">Birth Date</p>
+            <h3 class="display__date birth__date">_</h3>
+          </div>
+        </div>
+        <div class="user__infos">
+          <div class="both your__date__res age">
+            <p class="date__para">Age now</p>
+            <h3 class="display__date current__age">_</h3>
+            <p class="days__para birth__day">_</p>
+          </div>
+          <div class="both your__date">
+            <p class="date__para">Calculate Future Age</p>
+
+            <input
+              type="date"
+              name="date"
+              id="date"
+              class="input__future__date"
+            />
+            <div class="check__valid cfuture check__valid__false"></div>
+            <p class="alert__error alert__future__date alert__error__hide">
+              <i>Lorem i consectetur adipisicing elit.</i>
+            </p>
+          </div>
+          <div class="both your__date__res">
+            <p class="date__para">Age <span class="future__year">_</span></p>
+            <h3 class="display__date future__age">_</h3>
+            <p class="days__para future__day">_</p>
+          </div>
+        </div>
+        <input id="submit" type="submit" value="CHECK" />
+      </form>
+    </div>
+  </body>
+</html>
